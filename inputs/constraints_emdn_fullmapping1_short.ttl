@@ -1,0 +1,42 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://ex.org/> .
+@prefix riskman: <https://w3id.org/riskman/ontology#> .
+@prefix gmdn: <http://gmdn.org/> .
+@prefix emdn: <http://emdn.org/> .
+@prefix imdrf: <http://imdrf.org/> .
+
+
+# EMDN: C04020201, Device: A04, Patient: E20
+ex:Shape_C04020201_A04_E20_EMDN
+    a sh:NodeShape ;
+    sh:targetClass riskman:RMF ;
+    sh:or (
+        [ sh:not [ sh:and (
+                    [ sh:property [ sh:path riskman:code;  sh:class emdn:C04020201; ] ]
+                    [ sh:property [ sh:path (riskman:hasControlledRisk 
+                                             riskman:hasAnalyzedRisk 
+                                             riskman:hasDomainSpecificHazard 
+                                             riskman:hasDeviceProblem); 
+									                  sh:qualifiedValueShape  [ sh:class imdrf:A04 ];
+                                    sh:qualifiedMinCount 1
+                                  ]
+                    ]
+                         )
+                ]
+        ]
+      	[ sh:property [ sh:path (riskman:hasControlledRisk  riskman:hasAnalyzedRisk ) ;
+                        sh:qualifiedValueShape [ sh:node [ sh:and (
+								            [ sh:path (riskman:hasDomainSpecificHazard riskman:hasDeviceProblem); sh:class imdrf:A04 ]
+                            [ sh:path riskman:hasPatientProblem; sh:class imdrf:E20 ]
+                                                        )
+                                                        ] 
+                                                ];
+                            sh:qualifiedMinCount 1
+                      ]
+        ]
+      );
+    sh:message "If device has emdn C04020201 and device problem A04, then patient problem E20 must be present" ;
+    sh:severity sh:Warning ;
+.

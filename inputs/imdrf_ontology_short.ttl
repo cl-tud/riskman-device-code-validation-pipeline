@@ -1,0 +1,24 @@
+@prefix ex: <http://example.org/ontology/> .
+@prefix imdrf: <http://imdrf.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+imdrf:E0128 a owl:Class ;
+    rdfs:label "Peripheral Nervous Injury" ;
+    ex:nonIMDRFCode "MedDRA:10034586:Peripheral nerve injury" ;
+    rdfs:comment "Injury to the peripheral nervous system." ;
+    rdfs:subClassOf imdrf:E01,
+        imdrf:E20 .
+
+
+imdrf:A040101 a owl:Class ;
+    rdfs:label "Fracture" ;
+    rdfs:comment "Problem associated with a partial or full-thickness crack in the device materials." ;
+    rdfs:subClassOf imdrf:A0401 .
+
+
+imdrf:A0401 a owl:Class ;
+    rdfs:label "Break" ;
+    rdfs:comment "Problem associated with undesired damage or breakage of those materials used in the device construction." ;
+    rdfs:subClassOf imdrf:A04 .

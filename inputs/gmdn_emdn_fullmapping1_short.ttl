@@ -1,0 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix riskman: <https://w3id.org/riskman/ontology#> .
+@prefix gmdn: <http://gmdn.org/> .
+@prefix emdn: <http://emdn.org/> .
+@prefix imdrf: <http://imdrf.org/> .
+
+# GMDN: 10403 <-> EMDN: C04020201        
+gmdn:10403 rdfs:subClassOf emdn:C04020201 .
+emdn:C04020201 rdfs:subClassOf gmdn:10403  .
