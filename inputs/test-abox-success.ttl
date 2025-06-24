@@ -1,0 +1,61 @@
+@prefix ex: <http://example.org#> .
+@prefix riskman: <https://w3id.org/riskman/ontology#> .
+@prefix gmdn: <http://gmdn.org/> .
+@prefix emdn: <http://emdn.org/> .
+@prefix imdrf: <http://imdrf.org/> .
+
+
+
+##############################################
+#  RMF 
+##############################################
+
+ex:rmf1 a riskman:RMF ;
+    riskman:hasControlledRisk ex:controlledRisk1, ex:controlledRisk2 ;
+    riskman:hasDeviceCode  ex:code1 .
+
+ex:code1 a gmdn:10403 . 
+
+##############################################
+#  Controlled Risk 1 
+##############################################
+
+ex:controlledRisk1 a riskman:ControlledRisk ;
+    riskman:hasAnalyzedRisk ex:analyzedRisk1 .
+
+ex:analyzedRisk1 a riskman:AnalyzedRisk ;
+    riskman:hasPatientProblem ex:patientProblem1 ;
+    riskman:hasDomainSpecificHazard ex:domainSpecificHazard1 .
+
+
+ex:domainSpecificHazard1 a riskman:DomainSpecificHazard ;
+    riskman:hasDeviceProblem ex:deviceProblem1 .
+
+ex:deviceProblem1 a riskman:DeviceProblem, imdrf:A040101 .
+
+# 
+
+# ex:patientProblem1 a riskman:PatientProblem, imdrf:E0128 .
+ex:patientProblem1 a riskman:PatientProblem, imdrf:E123123 .
+
+
+##############################################
+#  Controlled Risk 2 
+##############################################
+
+ex:controlledRisk2 a riskman:ControlledRisk ;
+    riskman:hasAnalyzedRisk ex:analyzedRisk2 .
+
+ex:analyzedRisk2 a riskman:AnalyzedRisk ;
+    riskman:hasPatientProblem ex:patientProblem2 ;
+    riskman:hasDomainSpecificHazard ex:domainSpecificHazard2 .
+
+
+ex:domainSpecificHazard2 a riskman:DomainSpecificHazard ;
+    riskman:hasDeviceProblem ex:deviceProblem2 .
+
+ex:deviceProblem2 a riskman:DeviceProblem, imdrf:A040101 .
+
+# 
+
+ex:patientProblem2 a riskman:PatientProblem, imdrf:E0128 .

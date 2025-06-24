@@ -1,0 +1,196 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/riskman/ontology#hasAnalyzedRisk
+<https://w3id.org/riskman/ontology#hasAnalyzedRisk> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/riskman/ontology#hasControlledRisk
+<https://w3id.org/riskman/ontology#hasControlledRisk> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/riskman/ontology#hasDeviceCode
+<https://w3id.org/riskman/ontology#hasDeviceCode> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/riskman/ontology#hasDeviceProblem
+<https://w3id.org/riskman/ontology#hasDeviceProblem> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/riskman/ontology#hasDomainSpecificHazard
+<https://w3id.org/riskman/ontology#hasDomainSpecificHazard> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/riskman/ontology#hasPatientProblem
+<https://w3id.org/riskman/ontology#hasPatientProblem> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://emdn.org/C04020201
+<http://emdn.org/C04020201> rdf:type owl:Class .
+
+
+###  http://gmdn.org/10403
+<http://gmdn.org/10403> rdf:type owl:Class .
+
+
+###  http://imdrf.org/A04
+<http://imdrf.org/A04> rdf:type owl:Class .
+
+
+###  http://imdrf.org/A0401
+<http://imdrf.org/A0401> rdf:type owl:Class .
+
+
+###  http://imdrf.org/A040101
+<http://imdrf.org/A040101> rdf:type owl:Class .
+
+
+###  http://imdrf.org/E1212
+<http://imdrf.org/E1212> rdf:type owl:Class .
+
+
+###  http://imdrf.org/E123123
+<http://imdrf.org/E123123> rdf:type owl:Class .
+
+
+###  https://w3id.org/riskman/ontology#AnalyzedRisk
+<https://w3id.org/riskman/ontology#AnalyzedRisk> rdf:type owl:Class .
+
+
+###  https://w3id.org/riskman/ontology#ControlledRisk
+<https://w3id.org/riskman/ontology#ControlledRisk> rdf:type owl:Class .
+
+
+###  https://w3id.org/riskman/ontology#DeviceCode
+<https://w3id.org/riskman/ontology#DeviceCode> rdf:type owl:Class .
+
+
+###  https://w3id.org/riskman/ontology#DeviceProblem
+<https://w3id.org/riskman/ontology#DeviceProblem> rdf:type owl:Class .
+
+
+###  https://w3id.org/riskman/ontology#DomainSpecificHazard
+<https://w3id.org/riskman/ontology#DomainSpecificHazard> rdf:type owl:Class .
+
+
+###  https://w3id.org/riskman/ontology#PatientProblem
+<https://w3id.org/riskman/ontology#PatientProblem> rdf:type owl:Class .
+
+
+###  https://w3id.org/riskman/ontology#RMF
+<https://w3id.org/riskman/ontology#RMF> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org#analyzedRisk1
+<http://example.org#analyzedRisk1> rdf:type owl:NamedIndividual ,
+                                            owl:Thing ,
+                                            <https://w3id.org/riskman/ontology#AnalyzedRisk> ;
+                                   <https://w3id.org/riskman/ontology#hasDomainSpecificHazard> <http://example.org#domainSpecificHazard1> ;
+                                   <https://w3id.org/riskman/ontology#hasPatientProblem> <http://example.org#patientProblem1> .
+
+
+###  http://example.org#analyzedRisk2
+<http://example.org#analyzedRisk2> rdf:type owl:NamedIndividual ,
+                                            owl:Thing ,
+                                            <https://w3id.org/riskman/ontology#AnalyzedRisk> ;
+                                   <https://w3id.org/riskman/ontology#hasDomainSpecificHazard> <http://example.org#domainSpecificHazard2> ;
+                                   <https://w3id.org/riskman/ontology#hasPatientProblem> <http://example.org#patientProblem2> .
+
+
+###  http://example.org#code1
+<http://example.org#code1> rdf:type owl:NamedIndividual ,
+                                    <http://emdn.org/C04020201> ,
+                                    <http://gmdn.org/10403> ,
+                                    owl:Thing ,
+                                    <https://w3id.org/riskman/ontology#DeviceCode> .
+
+
+###  http://example.org#controlledRisk1
+<http://example.org#controlledRisk1> rdf:type owl:NamedIndividual ,
+                                              owl:Thing ,
+                                              <https://w3id.org/riskman/ontology#ControlledRisk> ;
+                                     <https://w3id.org/riskman/ontology#hasAnalyzedRisk> <http://example.org#analyzedRisk1> .
+
+
+###  http://example.org#controlledRisk2
+<http://example.org#controlledRisk2> rdf:type owl:NamedIndividual ,
+                                              owl:Thing ,
+                                              <https://w3id.org/riskman/ontology#ControlledRisk> ;
+                                     <https://w3id.org/riskman/ontology#hasAnalyzedRisk> <http://example.org#analyzedRisk2> .
+
+
+###  http://example.org#deviceProblem1
+<http://example.org#deviceProblem1> rdf:type owl:NamedIndividual ,
+                                             <http://imdrf.org/A04> ,
+                                             <http://imdrf.org/A0401> ,
+                                             <http://imdrf.org/A040101> ,
+                                             owl:Thing ,
+                                             <https://w3id.org/riskman/ontology#DeviceProblem> .
+
+
+###  http://example.org#deviceProblem2
+<http://example.org#deviceProblem2> rdf:type owl:NamedIndividual ,
+                                             <http://imdrf.org/A04> ,
+                                             <http://imdrf.org/A0401> ,
+                                             <http://imdrf.org/A040101> ,
+                                             owl:Thing ,
+                                             <https://w3id.org/riskman/ontology#DeviceProblem> .
+
+
+###  http://example.org#domainSpecificHazard1
+<http://example.org#domainSpecificHazard1> rdf:type owl:NamedIndividual ,
+                                                    owl:Thing ,
+                                                    <https://w3id.org/riskman/ontology#DomainSpecificHazard> ;
+                                           <https://w3id.org/riskman/ontology#hasDeviceProblem> <http://example.org#deviceProblem1> .
+
+
+###  http://example.org#domainSpecificHazard2
+<http://example.org#domainSpecificHazard2> rdf:type owl:NamedIndividual ,
+                                                    owl:Thing ,
+                                                    <https://w3id.org/riskman/ontology#DomainSpecificHazard> ;
+                                           <https://w3id.org/riskman/ontology#hasDeviceProblem> <http://example.org#deviceProblem2> .
+
+
+###  http://example.org#patientProblem1
+<http://example.org#patientProblem1> rdf:type owl:NamedIndividual ,
+                                              <http://imdrf.org/E1212> ,
+                                              <http://imdrf.org/E123123> ,
+                                              owl:Thing ,
+                                              <https://w3id.org/riskman/ontology#PatientProblem> .
+
+
+###  http://example.org#patientProblem2
+<http://example.org#patientProblem2> rdf:type owl:NamedIndividual ,
+                                              owl:Thing ,
+                                              <https://w3id.org/riskman/ontology#PatientProblem> .
+
+
+###  http://example.org#rmf1
+<http://example.org#rmf1> rdf:type owl:NamedIndividual ,
+                                   owl:Thing ,
+                                   <https://w3id.org/riskman/ontology#RMF> ;
+                          <https://w3id.org/riskman/ontology#hasControlledRisk> <http://example.org#controlledRisk1> ,
+                                                                                <http://example.org#controlledRisk2> ;
+                          <https://w3id.org/riskman/ontology#hasDeviceCode> <http://example.org#code1> .
+
+
+###  Generated by the OWL API (version 5.1.20) https://github.com/owlcs/owlapi/

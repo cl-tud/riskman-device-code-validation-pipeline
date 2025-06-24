@@ -21,7 +21,8 @@ ONTOLOGY3 := inputs/riskman-ontology.ttl
 ONTOLOGY4 := inputs/riskman-code-plugin.ttl
 
 # ABox
-ABOX := inputs/test-abox.ttl
+# ABOX := inputs/test-abox-success.ttl
+ABOX := inputs/test-abox-fail.ttl
 
 # SHACL constraints
 # SHACL_CONSTRAINTS := inputs/constraints_emdn_fullmapping1.ttl

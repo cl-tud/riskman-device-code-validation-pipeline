@@ -33,9 +33,6 @@ ex:domainSpecificHazard1 a riskman:DomainSpecificHazard ;
 
 ex:deviceProblem1 a riskman:DeviceProblem, imdrf:A040101 .
 
-# 
-
-# ex:patientProblem1 a riskman:PatientProblem, imdrf:E0128 .
 ex:patientProblem1 a riskman:PatientProblem, imdrf:E123123 .
 
 
@@ -57,7 +54,5 @@ ex:domainSpecificHazard2 a riskman:DomainSpecificHazard ;
 ex:deviceProblem2 a riskman:DeviceProblem, imdrf:A040101 .
 
 # 
-
-ex:patientProblem2 a riskman:PatientProblem, imdrf:E0128 .
-# ex:patientProblem1 a riskman:PatientProblem, imdrf:E123123 .
+ex:patientProblem1 a riskman:PatientProblem, imdrf:E1212 .
 
